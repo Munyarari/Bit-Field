@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include<iostream>
-#include<bitset>
+#include<bitset> // Do some reading about what it is and what kinda stuff you can do with this 
 using namespace std;
 
 class BitArray {
