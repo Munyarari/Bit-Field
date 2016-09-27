@@ -1,91 +1,11 @@
-//// TestBitArray2.cpp : Defines the entry point for the console application.
-////
-//
 #include "stdafx.h"
-//#include <iostream>
-//#include <algorithm>
-//#include <bitset>
-//using namespace std;
-//
-//class BitArray
-//{	
-//	unsigned int set[4];
-//public:
-//	BitArray() {
-//		for (int i = 0;i < 4;i++) {
-//			set[i] = 0;
-//		}
-//	}
-//	~BitArray() {}
-//
-//	void add(int x) {
-//		for (int i = 0;i < 4;i++) {
-//			set[i] = (1 << x);
-//		}
-//}
-//	BitArray Do_Union(BitArray x) {
-//		BitArray res[4];
-//		for (int i = 0;i < 4;i++) {
-//			res[i].set[i] = set[i] | x.set[i];
-//		}
-//		for (int i = 0;i < 4;i++) {
-//			return res[i];
-//		}
-//	}
-//	void print_set() {
-//		double counter = 2147483648;
-//		unsigned int k[4];
-//		
-//
-//			for (int i = 31,j=0;j<0,i >= 0;j++,i--)
-//			{	
-//				k[j] = set[j];
-//				double a = k[j] / counter;
-//				int b = k[j] / counter;
-//				if (k[j] / counter >= 1)
-//				{
-//					cout << 1;
-//					k[j] = (a - b)*counter;
-//				}
-//				else
-//					cout << 0;
-//				counter /= 2;
-//			}
-//			cout << endl;
-//	}
-//
-//};
-//
-//
-//int main()
-//{
-//	BitArray x;
-//	BitArray y;
-//	x.add(1);
-//	y.add(2);
-//	y.add(1);
-//	x.add(10);
-//	y.add(12);
-//	y.add(100);
-//	/*x.add(96);
-//	x.add(85);
-//	y.add(77);*/
-//	/*x.print_set();*/
-//	BitArray z;
-//	z = x.Do_Union(y);
-//	z.print_set();
-//
-//    return 0;
-//}
-//
 #include<iostream>
 #include<bitset>
-#include<initializer_list>
 using namespace std;
 
 class BitArray {
 private:
-	bitset<64> a;
+	bitset<64> a; // The value of the bitset can be changed 
 	/*int k[4];int n;*/
 public:
 	
