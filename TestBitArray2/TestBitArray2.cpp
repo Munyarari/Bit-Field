@@ -39,6 +39,7 @@ public:
 	//void delete_stuff(int n)/* in case you messed up and want to delete some stuff */ {
 	//	a[n] = 0;
 	//}
+	// Templates can sued to crete the Union,Intersection and Substraction.Create if you want to
 	BitArray Union(BitArray x)/* Method(function) to find out the union of two sets */ {
 		BitArray temp;
 		temp.a = a | x.a; // algorithm to find out the union of two sets
