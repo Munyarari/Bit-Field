@@ -6,39 +6,41 @@ using namespace std;
 class BitArray {
 private:
 	bitset<64> a; // The value of the bitset can be changed 
-	/*int k[4];int n;*/
 public:
 	
 	BitArray() {
 		a = 0;
 	}
-	//void add(int n)/* Method(function) to input elements into the set. */ {
-	//	a[n] = 1;
+
+	//void add(int n)/* Method(function) to input one element at a time into the set. */ {
+	//	a[n-1] = 1;
 	//}
+
 	template <typename T>/* Method(function) to input elements into the set. */
 	void add(T t) {
-		a[t] = 1;
+		a[t-1] = 1;
 	}
 	template <typename T, typename... A>/* Method(function) to input elements into the set. */
 	void add(T t , A... list)
 	{
-		a[t] = 1;
+		a[t-1] = 1;
 		add(list...);
 	}
 	template <typename T>/* in case you messed up and want to delete some stuff */
 	void delete_stuff(T t) {
-		a[t] = 0;
+		a[t-1] = 0;
 	}
 	template <typename T, typename... A>/* in case you messed up and want to delete some stuff */
 	void delete_stuff(T t, A... list)
 	{
-		a[t] = 0;
+		a[t-1] = 0;
 		delete(list...);
 	}
 
 	//void delete_stuff(int n)/* in case you messed up and want to delete some stuff */ {
-	//	a[n] = 0;
+	//	a[n-1] = 0;
 	//}
+
 	BitArray Union(BitArray x)/* Method(function) to find out the union of two sets */ {
 		BitArray temp;
 		temp.a = a | x.a; // algorithm to find out the union of two sets
@@ -56,7 +58,9 @@ public:
 	}
 	void print() /* print function..........displays the contents of the bitset */ {
 		cout << a; // display the contents of the bitset on the console window
+		
 	}
+	
 	
 };
 void main() {
