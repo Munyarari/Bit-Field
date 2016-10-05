@@ -16,22 +16,22 @@ public:
 	//	a[n-1] = 1;
 	//}
 
-	template <typename T>/* Method(function) to input elements into the set. */
-	void add(T t) {
+	/* Method(function) to input elements into the set. */
+	void add(int t) {
 		a[t-1] = 1;
 	}
-	template <typename T, typename... A>/* Method(function) to input elements into the set. */
-	void add(T t , A... list)
+	template <typename... A>/* Method(function) to input elements into the set. */
+	void add(int t , A... list)
 	{
 		a[t-1] = 1;
 		add(list...);
 	}
-	template <typename T>/* in case you messed up and want to delete some stuff */
-	void delete_stuff(T t) {
+	/* in case you messed up and want to delete some stuff */
+	void delete_stuff(int t) {
 		a[t-1] = 0;
 	}
-	template <typename T, typename... A>/* in case you messed up and want to delete some stuff */
-	void delete_stuff(T t, A... list)
+	template <typename... A>/* in case you messed up and want to delete some stuff */
+	void delete_stuff(int t, A... list)
 	{
 		a[t-1] = 0;
 		delete(list...);
@@ -57,11 +57,14 @@ public:
 		return temp;
 	}
 	void print() /* print function..........displays the contents of the bitset */ {
-		cout << a; // display the contents of the bitset on the console window
-		
-	}
+		/*cout << a <<endl;*/ // display the contents of the bitset on the console window
+		for (int i = 0;i < a.size();i++) {
+			if (a[i] == 1) {
+				cout << i+1 << " ";
+			}
+		}
 	
-	
+	}	
 };
 void main() {
 	// Test function
@@ -77,20 +80,20 @@ void main() {
 
 	x.add(10, 20, 30, 40, 50, 55, 6, 2, 4, 8, 5, 7, 3); // assign values(or switch on or off......as you wish to call it)
 	y.add(10, 20, 32, 42, 52, 60, 8, 4, 9, 15);
-	
+
 	z = x.Union(y);
 	a = x.Intersection(y);  // Perform operations 
 	b = x.Substraction(y);
 
 	x.print();
-	cout << endl; // Print the contents of the data sets
+	cout << endl;
 	y.print();
 	cout << endl;
-
 	z.print();
 	cout << endl;
-	a.print();         // Print the contents of the result sets
+	a.print();
 	cout << endl;
 	b.print();
 	cout << endl;
+		
 }
